@@ -67,9 +67,7 @@ Additionally, predefined values of 0 for all ratings are predefined for empty pi
 
 ### Analysis part 1: Rating study analysis
 
-In R:
-
-> `source('scripts/R/ReadDataMTurk.R')`
+`Rscript scripts/R/ReadDataMTurk.R`
 
 * Creates variables such as `all_compl`, `all_scribble` etc. which contain all ratings for all images.
 
@@ -77,7 +75,7 @@ In R:
 
 * Writes list of all drawings ranked higher than a certain rating score to `results/python_csv/highest_ranked_tracing-80.csv` etc.
 
-> `source("scripts/R/MiraikanDrawingMTurkAnalysis.R')`
+> `source("scripts/R/MTurkStatistics.R')`
 
 * Performs statistical tests for preregistered analyses.
 
