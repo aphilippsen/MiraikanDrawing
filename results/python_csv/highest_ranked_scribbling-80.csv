@@ -1,0 +1,8 @@
+"","Child","PictureIdx","PicType","PicClass","image_url","age","MeanSCR"
+"1","P17","image-2","type-S","class-M","P17_image-2_type-S_class-M.JPG",67,93.3
+"2","P103","image-3","type-I","class-H","P103_image-3_type-I_class-H.JPG",27,84.2857142857143
+"3","P97","image-3","type-I","class-C","P97_image-3_type-I_class-C.JPG",61,84
+"4","P48","image-4","type-S","class-F","P48_image-4_type-S_class-F.JPG",47,83.1666666666667
+"5","P8","image-3","type-O","class-M","P8_image-3_type-O_class-M.JPG",31,82.6
+"6","P79","image-2","type-I","class-M","P79_image-2_type-I_class-M.JPG",39,82.5833333333333
+"7","P103","image-2","type-O","class-C","P103_image-2_type-O_class-C.JPG",27,80.125
