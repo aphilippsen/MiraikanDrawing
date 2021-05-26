@@ -81,10 +81,11 @@ Additionally, predefined values of 0 for all ratings are predefined for empty pi
 
 ### Analysis part 2: CNN analyses
 
-#### Load (or compute) the activations of the network at different network layers for the drawings:
+#### Load (or compute) the activations of different network layers for the drawings:
 
-Run in ipython:
+Based on the full drawings
 > `%run -i scripts/python/prepare_network_activations.py -- Full`
+
 > `%run -i scripts/python/prepare_network_activations.py -- Delete`
 
 Loads or stores activation data from/to:

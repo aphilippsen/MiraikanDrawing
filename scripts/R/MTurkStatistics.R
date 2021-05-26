@@ -310,20 +310,7 @@ anova(scribble.lme, scribble.middle)
 anova(scribble.middle, scribble.none)
 
 
-ggplot(all_scribble, aes(x = age, y = SCR, size=10, color=PicType)) + geom_jitter(width=0.2,height=0.2) + geom_smooth(method="lm", se=T) + ggsave("results/R_plot/scribble-age-PicType.png")
-ggplot(all_scribble, aes(x = AQ, y = SCR, size=10, color=PicType)) + geom_jitter(width=0.2,height=0.2) + geom_smooth(method="lm", se=T) + ggsave("results/R_plot/scribble-AQ-PicType.png")
-
-ggplot(all_compl, aes(x = age, y = COMP, size=10, color=PicType)) + geom_jitter(width=0.2,height=0.2) + geom_smooth(method="lm", se=T) + ggsave("results/R_plot/compl-age-PicType.png")
-ggplot(all_compl, aes(x = AQ, y = COMP, size=10, color=PicType)) + geom_jitter(width=0.2,height=0.2) + geom_smooth(method="lm", se=T) + ggsave("results/R_plot/compl-AQ-PicType.png")
-
-ggplot(all_tracing, aes(x = age, y = TRACING, size=10, color=PicType)) + geom_jitter(width=0.2,height=0.2) + geom_smooth(method="lm", se=T) + ggsave("results/R_plot/tracing-age-PicType.png")
-ggplot(all_tracing, aes(x = AQ, y = TRACING, size=10, color=PicType)) + geom_jitter(width=0.2,height=0.2) + geom_smooth(method="lm", se=T) + ggsave("results/R_plot/tracing-AQ-PicType.png")
-
-
-# => Potential problem: different drawings of one Childs are not necessarily consistent, even if it's the same type of drawing, just taking the overall mean of one Child for one PicType might not be enough to discover regularities in the data
-# but the stimuli sets were constructed in a way such that there are two pictures of the same picClass where one is "scrambled" and one is "inner". Try to compare those two, they could be more consistent and interesting.
-
-# Similarity score (NEW VERSION)
+# Similarity score (Alternative version)
 
 scribble_C2_perClass = all_scribble_C2 %>% group_by(Child, age, AQ, PicClass) %>% summarize(MeanScribble = mean(SCR))
 scribble_C3_perClass = all_scribble_C3 %>% group_by(Child, age, AQ, PicClass) %>% summarize(MeanScribble = mean(SCR))
