@@ -5,7 +5,7 @@ import sys
 
 from image_preparation import show_image, load_images_for_network
 from load_info_data import load_participants_info
-from vgg19_activations import get_layer_activations, check_classifications
+from vgg19_activations import get_layer_activations
 
 # call with command line argument: Delete (delete black parts of drawing) or Full (do not delete black parts of drawing before processing)
 
@@ -30,12 +30,12 @@ all_pictures_folder = 'data/all_drawings/'
 # loading participant information
 children, pic_type, pic_class, age_AQ_info = load_participants_info(image_paths, 'data/participants-age-aq-incl-adults.txt')
 
-print("Picture mode: " + str(delete_black))
+print("Picture mode: " + sys.argv[2])
 
 print("Load features from  network...")
 # load or generate the features from different network layers
 try:
-    features_per_layer = np.load('results/python_data/vgg19_features-' + str(delete_black) + '.npy', allow_pickle = True)        
+    features_per_layer = np.load('results/python_data/vgg19_features-' + sys.argv[2] + '.npy', allow_pickle = True)        
 except:
     print("Load images...")
     imgs_net = load_images_for_network(all_pictures_folder, image_paths, delete_black=delete_black)

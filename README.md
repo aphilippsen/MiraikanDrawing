@@ -104,19 +104,28 @@ This script calculates the distances of all children's drawings to adult drawing
 As a result, it generates a csv file for analysis in R: `results/python_csv/all-dist-to-adults.csv`
 
 3. Run in R:
-> `source('scripts/R/AnalyzeDistToAdults.R')`
+> `source('scripts/R/AnalyzeDevelopmentDistanceToAdults.R')`
 
 Results will be plotted to: `results/R_plot/all-dists-inner-all-layers.pdf` etc.
 
-4. To test the statistic significance: in `AnalyzeDistToAdults.R`, use the lines in the R script marked with "ICDL20 STATISTICS tests" and set the layer l accordingly.
+4. Statistics test are also included in `AnalyzeDevelopmentDistanceToAdults.R`
+
 
 #### Drawing styles: Quantify the distances of drawings of different styles to adult drawings in different layers of the network
-1. CSV files which list the highest ranked pictures for each drawing style (according to MTurk ratings) are located in: `results/python_csv/highest_ranked_*`
-The number 70, 80 or 90 is the percentage that is used as a cut-off.
+
+1. CSV files which list the highest ranked pictures for each drawing style (according to MTurk ratings) are located in: `results/python_csv/highest_ranked_*`. The number 70, 80 or 90 is the percentage of the rating number that is used as a cut-off.
+
 2. Run `scripts/python/prepare_network_activations.py` (with `Full` to keep the full drawings, including the presented part).
+
 > `%run -i scripts/python/prepare_network_activations.py -- Full`
-3. The python script `scripts/python/evaluate_drawing_styles.py` reads the CSV files and evaluates all drawings by comparing the activations to the activations of adult drawings of the same class/type. Results are written to `results/python_csv/drawing-style-data-*`. Run this script for multiple values of m to get different percentages of highly rated images.
-4. Statistics analysis is performed in `scripts/R/AnalyzeDistToAdults.R`: Search  for "ICDL20 statistics analysis of drawing style". (For the paper, significance scores of 70, 80 and 90 are computed and only findings p<.01 are reported which are found in all three conditions.
+
+3. The python script `scripts/python/evaluate_drawing_styles.py` reads the CSV files and evaluates all drawings by comparing the activations to the activations of adult drawings of the same class/type.
+
+> `%run -i scripts/python/evaluate_drawing_styles.py`
+
+Results are written to `results/python_csv/drawing-style-data-*`. Run this script for multiple values of m to get different percentages of highly rated images.
+
+4. Afterwards, statistics analysis can be performed using `scripts/R/AnalyzeDrawingStyle.R`. For the paper, significance scores were computed for cut-offs 70, 80 and 90 individually and only findings p<.01 are reported which are found in all three conditions.
 
 
 #### How to create the representational dissimilarity matrices (RDMs) for different groups of children (by age or AQ)
