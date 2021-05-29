@@ -130,12 +130,14 @@ Results are written to `results/python_csv/drawing-style-data-*`. Run this scrip
 
 #### How to create the representational dissimilarity matrices (RDMs) for different groups of children (by age or AQ)
 1. Run `scripts/python/prepare_network_activations.py` (with argument Delete to delete the existing part of the drawing).
+
 > `%run -i scripts/python/prepare_network_activations.py -- Delete`
 
-2. Run `scripts/python/analyse_RDM*` script depending on whether you want to create the RDMs for...
-* different groups of children (equally distributed groups depending on age and AQ score): `analyse_RDM.py`
-* or for specific other sets of drawings/the original stimuli etc.: `analyse_RDM_fixed_patterns.py`
+2. Run `scripts/python/create_RDM.py` script to create the RDMs for different groups of children, equally distributed depending on age.
 
+> `%run -i scripts/python/create_RDM.py`
+
+3. `scripts/R/AnalyzeRDMvalues.R` performs the statistical test for the values of different age groups and adults.
 
 #### Quantifying individual differences
 
