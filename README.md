@@ -125,7 +125,7 @@ Results will be plotted to: `results/R_plot/all-dists-inner-all-layers.pdf` etc.
 
 Results are written to `results/python_csv/drawing-style-data-*`. Run this script for multiple values of m to get different percentages of highly rated images.
 
-4. Afterwards, statistics analysis can be performed using `scripts/R/AnalyzeDrawingStyle.R`. For the paper, significance scores were computed for cut-offs 70, 80 and 90 individually and only findings p<.01 are reported which are found in all three conditions.
+4. Afterwards, statistics analysis can be performed using `scripts/R/AnalyzeDrawingStyle.R`. For the paper, significance scores were computed for cut-offs 60, 70 and 80 individually and only findings p<.01 are reported which are found in all three conditions.
 
 
 #### How to create the representational dissimilarity matrices (RDMs) for different groups of children (by age or AQ)

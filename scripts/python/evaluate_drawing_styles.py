@@ -37,9 +37,6 @@ child_pic_class = np.asarray(pic_class)[child_indices]
 #results/python_csv/highest_ranked_scribbling.csv
 #results/python_csv/highest_ranked_tracing.csv
 
-
-
-
 # data structure
 # 7 layers x 4 styles x 2 (mean+var)
 # => box plot
@@ -49,7 +46,7 @@ dissimilarity_p_style = np.zeros((num_layers, 4), dtype=object)
 # for statistics analysis
 style_list = []
 
-m = 80
+m = 70
 
 style_files = ['results/python_csv/highest_ranked_scribbling-' + str(m) + '.csv', 'results/python_csv/highest_ranked_coloring-' + str(m) + '.csv', 'results/python_csv/highest_ranked_tracing-' + str(m) + '.csv', 'results/python_csv/highest_ranked_completion-' + str(m) + '.csv']
 
@@ -102,7 +99,7 @@ plt.savefig('results/python_plot/distance-per-drawing-style' + str(m) + '.pdf')
 plt.close()
 print('Generated plot: results/python_plot/distance-per-drawing-style' + str(m) + '.pdf')
 
-# write a csv so that I can test the statistics
+# write csv file for statistical analysis
 df_style = pd.DataFrame(data=style_list, columns = ['style', 'layer', 'dist'])
 df_style.to_csv('results/python_csv/drawing-style-data-' + str(m) + '.csv')
 print('Generated csv: results/python_csv/drawing-style-data-' + str(m) + '.csv')
