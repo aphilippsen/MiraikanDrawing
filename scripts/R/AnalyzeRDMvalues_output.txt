@@ -1,0 +1,80 @@
+[1] "Difference between kid1 group and adults?"
+
+Call:
+lm(formula = dist ~ group, data = data)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.233051 -0.044425 -0.004585  0.047429  0.222404 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.29295    0.01062   27.58   <2e-16 ***
+groupkid1   -0.19330    0.01502  -12.87   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.0863 on 130 degrees of freedom
+Multiple R-squared:  0.5602,	Adjusted R-squared:  0.5568 
+F-statistic: 165.6 on 1 and 130 DF,  p-value: < 2.2e-16
+
+[1] "Difference between kid2 group and adults?"
+
+Call:
+lm(formula = dist ~ group, data = data)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.233051 -0.046953 -0.000771  0.040570  0.222404 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.29295    0.01062  27.577  < 2e-16 ***
+groupkid2   -0.13259    0.01502  -8.826 6.29e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.0863 on 130 degrees of freedom
+Multiple R-squared:  0.3747,	Adjusted R-squared:  0.3699 
+F-statistic: 77.89 on 1 and 130 DF,  p-value: 6.294e-15
+
+[1] "Difference between kid3 group and adults?"
+
+Call:
+lm(formula = dist ~ group, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.23305 -0.06478  0.00119  0.06010  0.22240 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.29295    0.01149  25.488  < 2e-16 ***
+groupkid3   -0.07458    0.01625  -4.588 1.04e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.09338 on 130 degrees of freedom
+Multiple R-squared:  0.1394,	Adjusted R-squared:  0.1327 
+F-statistic: 21.05 on 1 and 130 DF,  p-value: 1.04e-05
+
+[1] "Difference between kid4 group and adults?"
+
+Call:
+lm(formula = dist ~ group, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.23305 -0.09145 -0.01557  0.10091  0.24220 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.29295    0.01409  20.797   <2e-16 ***
+groupkid4   -0.03791    0.01992  -1.903   0.0593 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1144 on 130 degrees of freedom
+Multiple R-squared:  0.0271,	Adjusted R-squared:  0.01962 
+F-statistic: 3.621 on 1 and 130 DF,  p-value: 0.05926
+

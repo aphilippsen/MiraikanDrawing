@@ -32,10 +32,10 @@ child_pic_class = np.asarray(pic_class)[child_indices]
 
 ### Pearson distance to adult drawings on different layers for scribbling etc.
 
-#results/python_csv/highest_ranked_coloring.csv
-#results/python_csv/highest_ranked_completion.csv
-#results/python_csv/highest_ranked_scribbling.csv
-#results/python_csv/highest_ranked_tracing.csv
+#results/csv/highest_ranked_coloring.csv
+#results/csv/highest_ranked_completion.csv
+#results/csv/highest_ranked_scribbling.csv
+#results/csv/highest_ranked_tracing.csv
 
 # data structure
 # 7 layers x 4 styles x 2 (mean+var)
@@ -48,7 +48,7 @@ style_list = []
 
 m = 70
 
-style_files = ['results/python_csv/highest_ranked_scribbling-' + str(m) + '.csv', 'results/python_csv/highest_ranked_coloring-' + str(m) + '.csv', 'results/python_csv/highest_ranked_tracing-' + str(m) + '.csv', 'results/python_csv/highest_ranked_completion-' + str(m) + '.csv']
+style_files = ['results/csv/highest_ranked_scribbling-' + str(m) + '.csv', 'results/csv/highest_ranked_coloring-' + str(m) + '.csv', 'results/csv/highest_ranked_tracing-' + str(m) + '.csv', 'results/csv/highest_ranked_completion-' + str(m) + '.csv']
 
 for f in range(len(style_files)):
     # load all the drawings with the highest ratings in scribbling
@@ -101,7 +101,7 @@ print('Generated plot: results/python_plot/distance-per-drawing-style' + str(m) 
 
 # write csv file for statistical analysis
 df_style = pd.DataFrame(data=style_list, columns = ['style', 'layer', 'dist'])
-df_style.to_csv('results/python_csv/drawing-style-data-' + str(m) + '.csv')
-print('Generated csv: results/python_csv/drawing-style-data-' + str(m) + '.csv')
+df_style.to_csv('results/csv/drawing-style-data-' + str(m) + '.csv')
+print('Generated csv: results/csv/drawing-style-data-' + str(m) + '.csv')
 
 

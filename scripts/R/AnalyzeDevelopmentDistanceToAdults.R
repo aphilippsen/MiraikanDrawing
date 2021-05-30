@@ -4,7 +4,7 @@ source("scripts/R/ReadDataMTurk.R")
 
 # read the tables from python code
 # Distance of each child to adults
-all_dists = read.table("results/python_csv/all-dist-to-adults.csv", header=T, sep=",")
+all_dists = read.table("results/csv/all-dist-to-adults.csv", header=T, sep=",")
 
 # Analysis and plots for ICDL20 paper
 

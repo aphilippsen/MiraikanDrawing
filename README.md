@@ -73,7 +73,7 @@ Additionally, predefined values of 0 for all ratings are predefined for empty pi
 
 * Creates plots of completion/scribbling across age, AQ score etc. as `results/R_plot/compl-outer-age.pdf` etc. (If incorrect pdf files are generated, run the script content instead directly from the R command line.)
 
-* Writes list of all drawings ranked higher than a certain rating score to `results/python_csv/highest_ranked_tracing-80.csv` etc.
+* Writes list of all drawings ranked higher than a certain rating score to `results/csv/highest_ranked_tracing-80.csv` etc.
 
 > `source("scripts/R/MTurkStatistics.R')`
 
@@ -101,7 +101,7 @@ Loads or stores activation data from/to:
 > `%run -i scripts/python/evaluate_activations.py`
 
 This script calculates the distances of all children's drawings to adult drawings (assuming that more adult-like drawings will have a smaller distance to adult drawings).
-As a result, it generates a csv file for analysis in R: `results/python_csv/all-dist-to-adults.csv`
+As a result, it generates a csv file for analysis in R: `results/csv/all-dist-to-adults.csv`
 
 3. Run in R:
 > `source('scripts/R/AnalyzeDevelopmentDistanceToAdults.R')`
@@ -113,7 +113,7 @@ Results will be plotted to: `results/R_plot/all-dists-inner-all-layers.pdf` etc.
 
 #### Drawing styles: Quantify the distances of drawings of different styles to adult drawings in different layers of the network
 
-1. CSV files which list the highest ranked pictures for each drawing style (according to MTurk ratings) are located in: `results/python_csv/highest_ranked_*`. The number 70, 80 or 90 is the percentage of the rating number that is used as a cut-off.
+1. CSV files which list the highest ranked pictures for each drawing style (according to MTurk ratings) are located in: `results/csv/highest_ranked_*`. The number 70, 80 or 90 is the percentage of the rating number that is used as a cut-off.
 
 2. Run `scripts/python/prepare_network_activations.py` (with `Full` to keep the full drawings, including the presented part).
 
@@ -123,12 +123,12 @@ Results will be plotted to: `results/R_plot/all-dists-inner-all-layers.pdf` etc.
 
 > `%run -i scripts/python/evaluate_drawing_styles.py`
 
-Results are written to `results/python_csv/drawing-style-data-*`. Run this script for multiple values of m to get different percentages of highly rated images.
+Results are written to `results/csv/drawing-style-data-*`. Run this script for multiple values of m to get different percentages of highly rated images.
 
 4. Afterwards, statistics analysis can be performed using `scripts/R/AnalyzeDrawingStyle.R`. For the paper, significance scores were computed for cut-offs 60, 70 and 80 individually and only findings p<.01 are reported which are found in all three conditions.
 
 
-#### How to create the representational dissimilarity matrices (RDMs) for different groups of children (by age or AQ)
+#### Create the representational dissimilarity matrices (RDMs) for different age groups of children
 1. Run `scripts/python/prepare_network_activations.py` (with argument Delete to delete the existing part of the drawing).
 
 > `%run -i scripts/python/prepare_network_activations.py -- Delete`
@@ -137,23 +137,27 @@ Results are written to `results/python_csv/drawing-style-data-*`. Run this scrip
 
 > `%run -i scripts/python/create_RDM.py`
 
+Results are plotted to `results/python_plot/rdms-with-age-layer-6.pdf` etc.
+
 3. `scripts/R/AnalyzeRDMvalues.R` performs the statistical test for the values of different age groups and adults.
 
 #### Quantifying individual differences
 
 The idea is to use the RDMs generated for individual children and analyse them according to the degree of diversity.
 
-* How to get the quantification regarding the "reliance on top-down prior": Basically evaluates how similar children drew when the original/presented stimuli was changed.
+* Evaluating how children changed their style of drawing when the original/presented stimuli was modified.
 1. Run `scripts/python/prepare_network_activations.py` (with argument Delete to delete the existing part of the drawing).
+
 > `%run -i scripts/python/prepare_network_activations.py -- Delete`
 
-2. Run script `scripts/python/analyse_RDM_per_child.py`
-The resulting scores are written to: results/python_csv/prior-evaluation.csv
-And the RDMs are stored to: results/python_plot/RDMs_per_child
+2. Run script `scripts/python/create_RDM_per_child.py`:
 
-3. `scripts/R/CombinePriorRatingData.R` reads the prior-evaluation.csv and creates csv files results/prior-vs-ratings-*.csv for all layers.
+> `%run -i scripts/python/create_RDM_per_child.py`
 
-Results are plotted to `results/python_plot/rdms-with-age-layer-6.pdf` etc.
+The resulting scores are written to: `results/csv/score-evaluation.csv`
+And the RDMs are stored to the folder: `results/python_plot/RDMs_per_child`
+
+3. To combine the calculated scores with the rating data, call `scripts/R/CombineIndividualScoreWithRatings.R`. This script reads the `score-evaluation.csv` and creates csv files `results/csv/score-vs-ratings-*.csv` for all layers.
 
 #### Visualizing individual differences
 
@@ -163,8 +167,4 @@ Run `scripts/python/visualize_individual_RDM_score.py`, and change the code acco
 An interactive figure opens. When selecting points in the figure via mouse click, the child data corresponding to these values is copied in the main folder in the subfolder `pictureExplorer_current'.
 
 (Note: No plots might be displayed in some cases if the child's parents did not give consent to publish the drawing data online.)
-
-#### Code acknowledgements
-
-* Code for the gradcam algorithm, located in scripts/python/pyimagesearch/gradcam.py was originally developed by: https://www.pyimagesearch.com/2020/03/09/grad-cam-visualize-class-activation-maps-with-keras-tensorflow-and-deep-learning/.
 

@@ -197,7 +197,7 @@ for i in range(12):
     adult_RDM[6][i,i] = 0
 
 # extract unique values and write to csv for analysis
-with open('results/python_csv/RDM_values.csv', 'w') as f:
+with open('results/csv/RDM_values.csv', 'w') as f:
     f.write("group,dist\n")
     values = scipy.spatial.distance.squareform(kid1_RDM[6])
     for i in range(len(values)):

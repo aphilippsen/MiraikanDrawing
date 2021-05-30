@@ -1,7 +1,7 @@
 library(tidyverse)
 library(lme4)
 
-rdm.data = read.csv('results/python_csv/RDM_values.csv')
+rdm.data = read.csv('results/csv/RDM_values.csv')
 
 print("Difference between kid1 group and adults?")
 data = rdm.data %>% filter(group=="kid1" | group=="adult")

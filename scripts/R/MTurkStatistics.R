@@ -360,7 +360,7 @@ ggplot(repr_diff, aes(x = AQ, y = ReprDiff, size=10, color=age)) + geom_point(wi
 dev.off()
 
 repr_diff_sorted = repr_diff %>% arrange(desc(ReprDiff))
-write.csv(repr_diff_sorted, file="results/python_csv/repr_diff_sorted.csv")
+write.csv(repr_diff_sorted, file="results/csv/repr_diff_sorted.csv")
 
 
 ### test for hypothesis 1+2 for the separate PicClass categories

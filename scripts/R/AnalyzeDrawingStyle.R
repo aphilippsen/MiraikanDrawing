@@ -4,7 +4,7 @@ source("scripts/R/ReadDataMTurk.R")
 
 ### statistics analysis of drawing style ###
 
-style.data = read.csv('results/python_csv/drawing-style-data-70.csv')
+style.data = read.csv('results/csv/drawing-style-data-70.csv')
 
 # layer 0 to 6
 for (l in 0:6) {

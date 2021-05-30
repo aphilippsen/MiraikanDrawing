@@ -91,6 +91,6 @@ for layer in range(num_layers):
         all_dists_data.append([group, np.asarray(image_paths)[child_indices][im], current_class, current_type, layer, child_age_AQ_info[im,1], child_age_AQ_info[im,3], dist])
         
 df_all_dists = pd.DataFrame(data=all_dists_data, columns = ['age_group', 'image_url', 'pic_class', 'pic_type', 'layer', 'age', 'aq', 'dist'])
-df_all_dists.to_csv('results/python_csv/all-dist-to-adults.csv')
-print('Generate results/python_csv/all-dist-to-adults.csv for R script AnalyzeDistToAdults.R')
+df_all_dists.to_csv('results/csv/all-dist-to-adults.csv')
+print('Generate results/csv/all-dist-to-adults.csv for R script AnalyzeDistToAdults.R')
 

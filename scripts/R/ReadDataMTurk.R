@@ -241,23 +241,23 @@ all_scribble_sorted = all_scribble %>% group_by(Child, PictureIdx, PicType, PicC
 subset = all_scribble_sorted %>% filter(MeanSCR > higher_than)#[1:num_highest,]
 print("scribbling, average age:")
 print(mean(subset$age))
-write.csv(subset, file=paste0("results/python_csv/highest_ranked_scribbling-", higher_than, ".csv"))
+write.csv(subset, file=paste0("results/csv/highest_ranked_scribbling-", higher_than, ".csv"))
 
 all_compl_sorted = all_compl %>% group_by(Child, PictureIdx, PicType, PicClass, image_url, age) %>% summarize(MeanCOMP = mean(COMP)) %>% arrange(desc(MeanCOMP))
 subset = all_compl_sorted %>% filter(MeanCOMP > higher_than)#[1:num_highest,]
 print("completion, average age:")
 print(mean(subset$age))
-write.csv(subset, file=paste0("results/python_csv/highest_ranked_completion-", higher_than, ".csv"))
+write.csv(subset, file=paste0("results/csv/highest_ranked_completion-", higher_than, ".csv"))
 
 all_tracing_sorted = all_tracing %>% group_by(Child, PictureIdx, PicType, PicClass, image_url, age) %>% summarize(MeanTRACING = mean(TRACING)) %>% arrange(desc(MeanTRACING))
 subset = all_tracing_sorted %>% filter(MeanTRACING > higher_than)#[1:num_highest,]
 print("Tracing, average age:")
 print(mean(subset$age))
-write.csv(subset, file=paste0("results/python_csv/highest_ranked_tracing-", higher_than, ".csv"))
+write.csv(subset, file=paste0("results/csv/highest_ranked_tracing-", higher_than, ".csv"))
 
 all_coloring_sorted = all_coloring %>% group_by(Child, PictureIdx, PicType, PicClass, image_url, age) %>% summarize(MeanCOLORING = mean(COLORING)) %>% arrange(desc(MeanCOLORING))
 subset = all_coloring_sorted %>% filter(MeanCOLORING > higher_than)#[1:num_highest,]
 print("coloring, average age:")
 print(mean(subset$age))
-write.csv(subset, file=paste0("results/python_csv/highest_ranked_coloring-", higher_than, ".csv"))
+write.csv(subset, file=paste0("results/csv/highest_ranked_coloring-", higher_than, ".csv"))
 
