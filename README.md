@@ -3,7 +3,7 @@
 Code for analysing children's drawings, replicating results for:
 
 Philippsen, Tsuji, and Nagai:
-""
+"Quantifying developmental and individual differences of spontaneous drawing completion in children" (under review)
 
 An OSF preregistration of this study has been performed for part 1 of the analysis, covering the definition of the hypotheses and the statistical tests regarding the change of drawing behavior with age and AQ score, see:
 https://osf.io/tzwkv/?view_only=a37b7fbfcd8444bb9e991eccba874adb
