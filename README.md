@@ -14,7 +14,7 @@ All drawings (as listed in scripts/python/all-drawings.txt) have to be located i
 Download here:
 https://drive.google.com/file/d/1iWXP4yQmBSyD9gMc2pwxcgEsp3PJUfzf/view?usp=sharing
 
-(Note: This folder contains all children's drawings, except for drawings of children whose parents did not agree in the informed consent form to publish data anonymously on online platforms. Although raw data is not provided in these cases, the CNN features are included in the repository such that it is possible to replicate the paper results exactly.)
+(Note: This folder contains all adults' and childrens' drawings, except for drawings of children whose parents did not agree in the informed consent form to publish data anonymously on online platforms. Although raw data is not provided in these cases, the resulting CNN features are included in the repository such that it is possible to replicate the paper results exactly.)
 
 ### Info about the participants (age, gender, AQ score, number of questions answered in the AQ score questionnaire, sub-scales of AQ score):
 
